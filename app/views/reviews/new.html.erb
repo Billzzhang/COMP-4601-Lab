@@ -1,0 +1,5 @@
+<%= form_with url: product_reviews_path, method: :post do |form| %>
+  <%= form.label :rating, "Rating: " %>
+  <%= form.text_field :rating %>
+  <%= form.submit "Add" %>
+<% end %>
