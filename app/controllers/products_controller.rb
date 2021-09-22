@@ -1,6 +1,10 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: %i[ show edit update destroy ]
 
+  def root
+    redirect_to products_url
+  end
+
   # GET /products or /products.json
   def index
     @products = Product.search(params[:search], params[:instock])

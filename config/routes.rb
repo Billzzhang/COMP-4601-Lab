@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'products#root'
   resources :products do
     resources :reviews, only: [:index, :new, :create]
   end
