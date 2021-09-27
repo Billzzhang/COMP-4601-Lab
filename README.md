@@ -15,3 +15,5 @@ Demo: https://mediaspace.carleton.ca/media/1_v3bbula1
 |/products/:product_id/reviews/new| Form for creating a new review of a single product|
 
 Explanation: The routes are based on the models that it uses. For example, the Product model has routes that show all products for a dedicated route. In addition, the new route is dedicated to creating a new product.
+
+CURRENT PROGRESSION: Lab 1 Done
