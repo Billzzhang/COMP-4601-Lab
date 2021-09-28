@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  post 'orders' => 'orders#create'
+  delete 'orders/:id/destroy' => 'orders#destroy'
+
   root 'products#root'
   resources :products do
     resources :reviews, only: [:index, :new, :create]
