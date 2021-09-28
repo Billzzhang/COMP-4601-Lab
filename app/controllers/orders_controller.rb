@@ -1,4 +1,6 @@
 class OrdersController < ApplicationController
+  before_action :set_order, only: %i[show destroy]
+  
   def create
     @order = Order.new({name: order_params[:name]})
     respond_to do |format|
@@ -21,7 +23,13 @@ class OrdersController < ApplicationController
         end
       end
     end
-    
+  end
+
+  def index
+    @orders = Order.all
+  end
+
+  def show
   end
 
   def destroy
@@ -29,7 +37,7 @@ class OrdersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_order
-      @order = order.find(params[:id])
+      @order = Order.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.

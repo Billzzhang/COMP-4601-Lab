@@ -7,8 +7,9 @@ class Order < ApplicationRecord
 
   def valid_order
     self.line_items.each do |line_item|
-      product = Product.find(line_item.product_id)
-      if product == nil
+      begin
+        product = Product.find(line_item.product_id)
+      rescue ActiveRecord::RecordNotFound
         errors.add(:no_product, "The product does not exist")
         return false 
       end

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   post 'orders' => 'orders#create'
+  get 'orders' => 'orders#index'
+  get 'orders/:id' => 'orders#show'
   delete 'orders/:id/destroy' => 'orders#destroy'
 
   root 'products#root'
