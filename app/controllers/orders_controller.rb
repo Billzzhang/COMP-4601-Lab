@@ -18,6 +18,7 @@ class OrdersController < ApplicationController
           format.html { redirect_to products_url}
           format.json { render json: @order.errors, status: :created }
         else
+          @order.destroy!
           format.html { render :new, status: :conflict }
           format.json { render json: @order.errors, status: :conflict }
         end
